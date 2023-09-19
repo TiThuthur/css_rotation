@@ -1,0 +1,15 @@
+.contain{
+    border: 2px solid purple;
+    width: 100px;
+    height: 100px;
+    margin: 100px auto;
+}
+.ligne{
+    border: 2px solid purple;
+    position: relative;
+    left: 50%;
+    height: 50%;
+    width: 0px;
+    transform: rotate(90deg);
+    transform-origin: 0px bottom;
+}
