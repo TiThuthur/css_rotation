@@ -11,7 +11,7 @@ body {
   height: 400px;
   background: #7fffd4;
   box-shadow: rgba(136, 165, 191, 0.4784313725) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
-  transform: translateY(-300px) rotateX(90deg);
+  transform: rotateX(0deg) translateY(50px) translateZ(150px) perspective(300px);
 }
 
 /*# sourceMappingURL=style.css.map */

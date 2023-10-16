@@ -5,10 +5,20 @@ body {
   min-height: 100vh;
 }
 .scare {
-    transform-style: preserve-3d;
+  transform-style: preserve-3d;
   width: 200px;
   height: 400px;
   background: #7fffd4;
   box-shadow: #88a5bf7a 6px 2px 16px 0px, #ffffffcc -6px -2px 16px 0px;
-  transform: translateY(-300px) rotateX(90deg);
+  transform: rotateX(0deg) translateY(50px) translateZ(150px) perspective(300px);
+  // animation: rotation 5s both infinite;
 }
+
+// @keyframes rotation{
+//   from{
+//     transform: rotateX(90deg) translate3d(0px 150px 150px);
+//   }
+//   to {
+//     transform: rotateX(0) translate3d(0 0 0);
+//   }
+// }
