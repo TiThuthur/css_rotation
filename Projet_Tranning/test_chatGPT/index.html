@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzeria Bella - La meilleure pizza en ville</title>
+    <meta name="description" content="Pizzeria Bella - Découvrez la meilleure pizza en ville chez Pizzeria Bella. Commandez en ligne ou visitez notre restaurant pour savourer des pizzas délicieuses.">
+    <meta name="keywords" content="Pizzeria, Pizza, Restaurant, Cuisine italienne, Commande en ligne">
+    <meta name="author" content="Votre nom">
+
+    <style>
+        /* Styles pour le corps de la page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            line-height: 1.6;
+        }
+
+        /* Styles pour l'en-tête (header) */
+        header {
+            background-color: #e63946;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        /* Styles pour la section de menu */
+        .menu-section {
+            padding: 20px;
+        }
+
+        .menu-item {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .menu-item h3 {
+            font-size: 24px;
+        }
+
+        .menu-item p {
+            font-size: 18px;
+        }
+
+        /* Styles pour la section de contact */
+        .contact-section {
+            background-color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact-section h2 {
+            font-size: 28px;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+        }
+        .menu-item-display {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .menu-item-display h3,
+        .menu-item-display p {
+            opacity: 0;
+            transform: translateX(100%);
+            animation: slideIn 1s forwards;
+        }
+
+        /* Animation CSS */
+        @keyframes slideIn {
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Styles pour le pied de page (footer) */
+        footer {
+            background-color: #e63946;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête -->
+    <header>
+        <h1>Pizzeria Bella</h1>
+        <p>Découvrez la meilleure pizza en ville</p>
+    </header>
+
+    <!-- Section de menu -->
+    <section class="menu-section">
+        <h2>Notre Menu</h2>
+        <!-- <div class="menu-item">
+            <h3>Pizza Margherita</h3>
+            <p>Tomate, mozzarella, basilic</p>
+            <p>Prix : 10 €</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Pizza Pepperoni</h3>
+            <p>Tomate, mozzarella, pepperoni</p>
+            <p>Prix : 12 €</p>
+        </div>
+
+        <div class="menu-item">
+            <h3>Pizza Végétarienne</h3>
+            <p>Tomate, mozzarella, légumes variés</p>
+            <p>Prix : 11 €</p>
+        </div> -->
+
+        <div class="menu-item-display">
+            <h3 id="pizzaName"></h3>
+            <p id="pizzaDescription"></p>
+            <p id="pizzaPrice"></p>
+        </div>
+
+    </section>
+
+    <!-- Section de contact -->
+    <section class="contact-section">
+        <h2>Contactez-nous</h2>
+        <p>Adresse : 123 Rue de la Pizzeria</p>
+        <p>Téléphone : +33 01 234 567</p>
+        <p>Email : <a href="mailto:info@pizzeria-bella.com">info@pizzeria-bella.com</a></p>
+    </section>
+
+    <!-- Pied de page -->
+    <footer>
+        &copy; 2023 Pizzeria Bella - Tous droits réservés.
+    </footer>
+
+    <script>
+        // Liste des pizzas disponibles
+        const pizzas = [
+            {
+                name: "Pizza Margherita",
+                description: "Tomate, mozzarella, basilic",
+                price: "10 €"
+            },
+            {
+                name: "Pizza Pepperoni",
+                description: "Tomate, mozzarella, pepperoni",
+                price: "12 €"
+            },
+            {
+                name: "Pizza Végétarienne",
+                description: "Tomate, mozzarella, légumes variés",
+                price: "11 €"
+            }
+            // Ajoutez d'autres pizzas ici
+        ];
+
+        // Variables pour suivre l'index de la pizza affichée
+        let currentIndex = 0;
+
+        // Fonction pour afficher la pizza suivante
+        function displayNextPizza() {
+            const pizza = pizzas[currentIndex];
+            document.getElementById("pizzaName").textContent = pizza.name;
+            document.getElementById("pizzaDescription").textContent = pizza.description;
+            document.getElementById("pizzaPrice").textContent = `Prix : ${pizza.price}`;
+            currentIndex = (currentIndex + 1) % pizzas.length;
+        }
+
+        // Affichez la première pizza au chargement de la page
+        displayNextPizza();
+
+        // Démarrez la rotation automatique toutes les 5 secondes (5000 millisecondes)
+        setInterval(displayNextPizza, 5000);
+    </script>
+
+</body>
+</html>

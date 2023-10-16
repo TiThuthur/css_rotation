@@ -1,0 +1,17 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.scare {
+  transform-style: preserve-3d;
+  width: 200px;
+  height: 400px;
+  background: #7fffd4;
+  box-shadow: rgba(136, 165, 191, 0.4784313725) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;
+  transform: translateY(-300px) rotateX(90deg);
+}
+
+/*# sourceMappingURL=style.css.map */
